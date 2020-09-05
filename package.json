@@ -1,0 +1,24 @@
+{
+  "name": "discord-league-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot for LoL data",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimjeff49/discord-league-bot.git"
+  },
+  "author": "Jeff Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimjeff49/discord-league-bot/issues"
+  },
+  "homepage": "https://github.com/kimjeff49/discord-league-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0"
+  }
+}
