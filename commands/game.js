@@ -3,8 +3,8 @@ const api = require('../util/api');
 const { getRank } = require('../util/rank');
 
 module.exports = {
-  name: 'player',
-  description: 'Returns player statistics.',
+  name: 'game',
+  description: 'Returns the players current game.',
   args: true,
   usage: '[player region summoner_name]',
   async execute(message, args) {
@@ -19,8 +19,6 @@ module.exports = {
       res = await api.getSummonerLeagueStats(region, id);
       const leagueData = res.data;
 
-      console.log(res.data);
-
       leagueData.map((league) => {
         const exampleEmbed = new Discord.MessageEmbed()
           .setColor('#0099ff')
@@ -28,7 +26,6 @@ module.exports = {
           .setThumbnail(getRank(`${league.tier} ${league.rank}`))
           .addField('Summoner', league.summonerName)
           .addField('Rank', `${league.tier} ${league.rank}`)
-          .addField('LP', league.leaguePoints)
           .addField('Wins', league.wins)
           .addField('Losses', league.losses);
 
