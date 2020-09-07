@@ -19,8 +19,6 @@ module.exports = {
       res = await api.getSummonerLeagueStats(region, id);
       const leagueData = res.data;
 
-      console.log(res.data);
-
       leagueData.map((league) => {
         const exampleEmbed = new Discord.MessageEmbed()
           .setColor('#0099ff')

@@ -39,7 +39,7 @@ module.exports = {
           .filter((ranked) => ranked.queueType.includes('SOLO'))
           .map((league) => {
             embed = new Discord.MessageEmbed()
-              .setColor('#0099ff')
+              .setColor(player.teamId === 100 ? '#29edfd' : '#fb1474')
               .setTitle(player.teamId === 100 ? 'Team 1' : 'Team 2')
               .addFields(
                 {
