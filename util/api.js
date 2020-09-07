@@ -23,14 +23,24 @@ module.exports = {
     return { headers: headers, data: data };
   },
 
-  async getSummonerGame() {
+  async getSummonerGame(region, id) {
     let response = await fetch(
-      `https://${region}.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${id}?api_key=${process.env.LEAGUE_API_KEY})`
+      `https://${region}.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${id}?api_key=${process.env.LEAGUE_API_KEY}`
     );
 
     let headers = response.headers;
     let data = await response.json();
 
     return { headers: headers, data: data };
+  },
+
+  async getQueue(queueId) {
+    let response = await fetch(
+      'http://static.developer.riotgames.com/docs/lol/queues.json'
+    );
+
+    let data = await response.json();
+
+    return data.filter((queueType) => queueId === queueType.queueId);
   },
 };
